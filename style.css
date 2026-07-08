@@ -16,7 +16,7 @@ body {
     line-height: 1.7;
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden; /* Évite l'apparition d'une barre de défilement horizontale */
+    overflow-x: hidden; /* Empêche les barres de défilement horizontales indésirables */
 }
 
 a {
@@ -33,10 +33,12 @@ img {
     display: block;
 }
 
+/* ===== STRUCTURE FULL SCREEN ELEGANTE ===== */
 .container {
-    max-width: 100%; /* Permet au contenu de s'étendre sur tout l'écran */
-    margin: 0 auto;
-    padding: 0 48px; /* Marges confortables sur les côtés pour les grands écrans */
+    width: 100%;
+    max-width: 1400px; /* Aligne parfaitement le contenu sur grand écran */
+    margin: 0 auto;    /* Centre le bloc de contenu au milieu */
+    padding: 0 32px;   /* Marges internes de sécurité sur les côtés */
 }
 
 /* ===== TYPOGRAPHIE ===== */
@@ -261,6 +263,7 @@ header .container {
 
 /* ===== HERO ===== */
 .hero {
+    width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -377,6 +380,7 @@ header .container {
 
 /* ===== SECTIONS ===== */
 section {
+    width: 100%;
     padding: 80px 0;
 }
 
@@ -1190,6 +1194,7 @@ section:nth-child(even) {
 
 /* ===== FOOTER ===== */
 footer {
+    width: 100%;
     background: #2d2a24;
     color: #cbc4b8;
     padding: 60px 0 30px;
@@ -1221,7 +1226,7 @@ footer {
 
 .footer-col h4 {
     font-family: 'Inter', sans-serif;
-    font-size: 1rem; /* Corrigé : '1|rem' était cassé */
+    font-size: 1rem; /* Modifié de 1|rem à 1rem */
     font-weight: 600;
     color: #fff;
     margin-bottom: 16px;
