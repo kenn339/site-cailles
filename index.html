@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terre des Cailles - La ferme au service de votre santé</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+        <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg" />
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fas fa-feather-alt"></i></span>
+                Terre des Cailles
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#histoire">Notre histoire</a>
+                <a href="#produits">Produits</a>
+                <a href="#pourquoi">Pourquoi la caille</a>
+                <a href="#galerie">Galerie</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact" class="nav-cta">Nous contacter</a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">Bienvenue chez Terre des Cailles</span>
+                <h1>La ferme au service<br /><span>de votre santé</span></h1>
+                <p>
+                    Chez Terre des Cailles, nous élevons et transformons des cailles avec passion afin d'offrir une viande et des œufs de grande qualité. Notre ambition est de promouvoir une alimentation saine, savoureuse et riche en protéines tout en valorisant une production locale.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#produits" class="btn btn-primary">Découvrir nos produits</a>
+                    <a href="#contact" class="btn btn-outline">Nous contacter</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img
+                    src="https://i.postimg.cc/y6jBKp0X/IMG-9385.jpg"
+                    alt="Cailles à la ferme Terre des Cailles"
+                    loading="eager"
+                />
+                <div class="floating-badge">
+                    <i class="fas fa-star"></i> Qualité premium
+                </div>
+                <div class="floating-badge">
+                    <i class="fas fa-leaf"></i> 100% local
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NOTRE HISTOIRE ===== -->
+    <section id="histoire">
+        <div class="container">
+            <div class="histoire-grid">
+                <div class="histoire-image">
+                    <img
+                        src="https://i.postimg.cc/v8hMy25t/IMG-9386.jpg"
+                        alt="La ferme Terre des Cailles au Bénin"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="histoire-content">
+                    <span class="badge">Notre histoire</span>
+                    <h2>Qui sommes-nous ?</h2>
+                    <p>
+                        <strong>Terre des Cailles</strong> est une ferme spécialisée dans l'élevage et la valorisation de la caille au Bénin. Née de la volonté d'offrir une alternative nutritive aux viandes les plus consommées, notre marque met en avant les qualités exceptionnelles de la viande et des œufs de caille.
+                    </p>
+                    <p>
+                        Basée à Abomey-Calavi, notre ferme s'est construite sur des bases solides : un élevage rigoureux, des pratiques hygiéniques irréprochables et un amour sincère pour ce que nous faisons. Chaque caille est élevée dans le respect de son bien-être, ce qui se reflète directement dans la qualité de nos produits.
+                    </p>
+                    <p class="highlight">
+                        « Nous croyons qu'une bonne alimentation est la première richesse d'une famille. »
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MISSION / VISION / VALEURS ===== -->
+    <section>
+        <div class="container">
+            <div class="mission-vision-grid">
+                <div class="mv-card">
+                    <div class="icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Notre mission</h3>
+                    <p>Produire et commercialiser des produits à base de caille de qualité afin d'améliorer l'alimentation des populations tout en développant une filière avicole innovante au Bénin.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="icon"><i class="fas fa-eye"></i></div>
+                    <h3>Notre vision</h3>
+                    <p>Devenir la référence béninoise de l'élevage et de la transformation de la caille, puis un acteur reconnu en Afrique pour la qualité de ses produits.</p>
+                </div>
+            </div>
+
+            <h3 style="text-align:center; font-size:2rem; margin-bottom:12px;">Nos valeurs</h3>
+            <div class="valeurs-grid">
+                <div class="valeur-item"><i class="fas fa-check-circle"></i><h4>Qualité</h4></div>
+                <div class="valeur-item"><i class="fas fa-hand-sparkles"></i><h4>Hygiène</h4></div>
+                <div class="valeur-item"><i class="fas fa-heartbeat"></i><h4>Santé</h4></div>
+                <div class="valeur-item"><i class="fas fa-lightbulb"></i><h4>Innovation</h4></div>
+                <div class="valeur-item"><i class="fas fa-smile"></i><h4>Satisfaction client</h4></div>
+                <div class="valeur-item"><i class="fas fa-seedling"></i><h4>Bonnes pratiques d'élevage</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUITS ===== -->
+    <section id="produits">
+        <div class="container">
+            <h2 class="section-title">Nos produits</h2>
+            <p class="section-subtitle">Des produits d'exception, issus d'un élevage rigoureux et passionné.</p>
+            <div class="produits-grid">
+
+                <div class="produit-card">
+                    <div class="produit-image">
+                        <img src="https://i.postimg.cc/kgyvY9x4/023a6eda-f5a9-43fa-90fc-e8cd4f7e368d.jpg" alt="Œufs de caille Terre des Cailles" loading="lazy" />
+                    </div>
+                    <div class="produit-body">
+                        <span class="badge-produit">Œufs</span>
+                        <h3>Œufs de caille</h3>
+                        <ul>
+                            <li><i class="fas fa-circle"></i> Riches en protéines</li>
+                            <li><i class="fas fa-circle"></i> Riches en vitamines et minéraux</li>
+                            <li><i class="fas fa-circle"></i> Délicieux et pratiques</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-gold">Commander</a>
+                    </div>
+                </div>
+
+                <div class="produit-card">
+                    <div class="produit-image">
+                        <img src="https://i.postimg.cc/R0VQj8RH/03d8e70c-6cd7-4dc2-b339-306a8eb17f40.jpg" alt="Cailles fraîches Terre des Cailles" loading="lazy" />
+                    </div>
+                    <div class="produit-body">
+                        <span class="badge-produit">Viande fraîche</span>
+                        <h3>Cailles fraîches</h3>
+                        <p>Une viande tendre, savoureuse et adaptée à toute la famille. Idéale grillée, en sauce ou au four.</p>
+                        <a href="#contact" class="btn btn-gold">Commander</a>
+                    </div>
+                </div>
+
+                <div class="produit-card">
+                    <div class="produit-image" style="position:relative;">
+                        <img src="https://i.postimg.cc/vmHLpjzq/0a9bf4c8-7a18-4889-8670-a9dd16b1f8df.jpg" alt="Cailles fumées Terre des Cailles" loading="lazy" />
+                        <span class="star">⭐ Produit phare</span>
+                    </div>
+                    <div class="produit-body">
+                        <span class="badge-produit">Fumé</span>
+                        <h3>Cailles fumées</h3>
+                        <p>Une viande délicatement fumée offrant une saveur unique, prête à être dégustée ou cuisinée.</p>
+                        <a href="#contact" class="btn btn-gold">Commander</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POURQUOI LA CAILLE ===== -->
+    <section id="pourquoi">
+        <div class="container">
+            <div class="pourquoi-grid">
+                <div class="pourquoi-content">
+                    <span class="badge">Votre santé</span>
+                    <h2>Pourquoi la caille ?</h2>
+                    <p class="slogan">« Nous sommes ce que nous mangeons. »</p>
+                    <p>La viande de caille est reconnue pour sa richesse nutritionnelle exceptionnelle. Plus maigre que le poulet, elle est particulièrement adaptée aux enfants, aux femmes enceintes et aux sportifs. Elle contient notamment :</p>
+                    <div class="nutriments">
+                        <div class="nutriment"><i class="fas fa-circle"></i><span>Protéines de qualité</span></div>
+                        <div class="nutriment"><i class="fas fa-circle"></i><span>Fer</span></div>
+                        <div class="nutriment"><i class="fas fa-circle"></i><span>Zinc</span></div>
+                        <div class="nutriment"><i class="fas fa-circle"></i><span>Phosphore</span></div>
+                        <div class="nutriment" style="grid-column: span 2;"><i class="fas fa-circle"></i><span>Vitamines du groupe B (B1, B2, B12)</span></div>
+                    </div>
+                    <p style="margin-top:16px;">Les œufs de caille sont également appréciés pour leur haute densité nutritionnelle — ils concentrent deux à trois fois plus de vitamines que les œufs de poule à volume égal.</p>
+                </div>
+                <div class="pourquoi-image">
+                    <img
+                        src="https://i.postimg.cc/dQ6vFNGr/IMG-9387.jpg"
+                        alt="Bienfaits nutritionnels de la caille"
+                        loading="lazy"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POURQUOI CHOISIR ===== -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir Terre des Cailles ?</h2>
+            <p class="section-subtitle">Des raisons simples et fortes de nous faire confiance.</p>
+            <div class="choisir-grid">
+                <div class="choisir-item"><i class="fas fa-check-double"></i><h4>Produits de qualité</h4></div>
+                <div class="choisir-item"><i class="fas fa-home"></i><h4>Élevage spécialisé</h4></div>
+                <div class="choisir-item"><i class="fas fa-hand-sparkles"></i><h4>Hygiène rigoureuse</h4></div>
+                <div class="choisir-item"><i class="fas fa-utensils"></i><h4>Saveur exceptionnelle</h4></div>
+                <div class="choisir-item"><i class="fas fa-map-pin"></i><h4>Produits locaux</h4></div>
+                <div class="choisir-item"><i class="fas fa-headset"></i><h4>Service client réactif</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESSUS ===== -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Notre processus</h2>
+            <p class="section-subtitle">De la sélection à votre table, chaque étape est maîtrisée.</p>
+            <div class="processus-steps">
+                <div class="processus-step"><div class="step-num">1</div><h4>Sélection des reproducteurs</h4></div>
+                <div class="processus-step"><div class="step-num">2</div><h4>Élevage des cailles</h4></div>
+                <div class="processus-step"><div class="step-num">3</div><h4>Suivi sanitaire</h4></div>
+                <div class="processus-step"><div class="step-num">4</div><h4>Transformation</h4></div>
+                <div class="processus-step"><div class="step-num">5</div><h4>Fumage</h4></div>
+                <div class="processus-step"><div class="step-num">6</div><h4>Conditionnement</h4></div>
+                <div class="processus-step"><div class="step-num">7</div><h4>Distribution</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALERIE ===== -->
+    <section id="galerie">
+        <div class="container">
+            <h2 class="section-title">Galerie</h2>
+            <p class="section-subtitle">Découvrez notre univers en images — la ferme, nos cailles et nos produits.</p>
+            <div class="galerie-grid">
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/6Q5LDS0L/376a3984-e1c6-4007-9ef5-d3f3013cc7d5.jpg">
+                    <img src="https://i.postimg.cc/6Q5LDS0L/376a3984-e1c6-4007-9ef5-d3f3013cc7d5.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/jjdQG9Xn/4a7c0225-5978-409c-b26c-6eae45068f82.jpg">
+                    <img src="https://i.postimg.cc/jjdQG9Xn/4a7c0225-5978-409c-b26c-6eae45068f82.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/CKLHWtN7/4d40952a-c472-4bdb-a198-36b763c5ff71.jpg">
+                    <img src="https://i.postimg.cc/CKLHWtN7/4d40952a-c472-4bdb-a198-36b763c5ff71.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/x1P3pYKr/532c1277-16e4-439d-935f-214eec3f4786.jpg">
+                    <img src="https://i.postimg.cc/x1P3pYKr/532c1277-16e4-439d-935f-214eec3f4786.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/JzQ5YmbM/5c0b4a59-bf74-4335-ad60-8677bc86f27b.jpg">
+                    <img src="https://i.postimg.cc/JzQ5YmbM/5c0b4a59-bf74-4335-ad60-8677bc86f27b.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/6Q5LDS0P/60f92b00-85a8-43bf-be6f-8598a104170d.jpg">
+                    <img src="https://i.postimg.cc/6Q5LDS0P/60f92b00-85a8-43bf-be6f-8598a104170d.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/YSqfJV3C/9073eb4f-3fd3-4741-a6a1-4f570667ec68.jpg">
+                    <img src="https://i.postimg.cc/YSqfJV3C/9073eb4f-3fd3-4741-a6a1-4f570667ec68.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/KYqrFNqD/9cdf67b6-88b6-4291-aa4a-c51c0fc101db.jpg">
+                    <img src="https://i.postimg.cc/KYqrFNqD/9cdf67b6-88b6-4291-aa4a-c51c0fc101db.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/Jz8QQtH9/90ba7905-ed3e-4f4a-bd7d-0614c512c87f.jpg">
+                    <img src="https://i.postimg.cc/Jz8QQtH9/90ba7905-ed3e-4f4a-bd7d-0614c512c87f.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/bwR9V8Qb/9b7c6bfe-ee84-4935-bf03-ae9df11f0720.jpg">
+                    <img src="https://i.postimg.cc/bwR9V8Qb/9b7c6bfe-ee84-4935-bf03-ae9df11f0720.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/TPYqZS9k/a0623e43-d131-4e39-91a6-7f8d7567ce25.jpg">
+                    <img src="https://i.postimg.cc/TPYqZS9k/a0623e43-d131-4e39-91a6-7f8d7567ce25.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/ht01Zg9d/ab4adedc-a98b-4d20-a9fa-c7525e9f7a52.jpg">
+                    <img src="https://i.postimg.cc/ht01Zg9d/ab4adedc-a98b-4d20-a9fa-c7525e9f7a52.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/4xG11nhT/ad48c5d6-0bbc-4480-acfa-9a75fc082ddf.jpg">
+                    <img src="https://i.postimg.cc/4xG11nhT/ad48c5d6-0bbc-4480-acfa-9a75fc082ddf.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/Jh4c9gqD/b551be21-6e14-48e5-903e-d2b2d56217fa.jpg">
+                    <img src="https://i.postimg.cc/Jh4c9gqD/b551be21-6e14-48e5-903e-d2b2d56217fa.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/Cx4srYbX/b96895bc-3507-4689-a1d4-e16a4ff500c3.jpg">
+                    <img src="https://i.postimg.cc/Cx4srYbX/b96895bc-3507-4689-a1d4-e16a4ff500c3.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/Xv7cTh8d/b983664f-a161-49fa-ac67-5c818dced6ce.jpg">
+                    <img src="https://i.postimg.cc/Xv7cTh8d/b983664f-a161-49fa-ac67-5c818dced6ce.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/SxGf1qcH/c4a4219e-051a-4024-bf37-c00d021bd858.jpg">
+                    <img src="https://i.postimg.cc/SxGf1qcH/c4a4219e-051a-4024-bf37-c00d021bd858.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/cLcBkZQG/d71977fa-8ae8-4f4c-a985-c45a79f36c44.jpg">
+                    <img src="https://i.postimg.cc/cLcBkZQG/d71977fa-8ae8-4f4c-a985-c45a79f36c44.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/bwR9V8Qn/d9c8b10f-b201-49fe-b090-8554a563a5bf.jpg">
+                    <img src="https://i.postimg.cc/bwR9V8Qn/d9c8b10f-b201-49fe-b090-8554a563a5bf.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/mgSypRQZ/e96aa2fe-0a73-430f-9b5f-ce00aaeb9e92.jpg">
+                    <img src="https://i.postimg.cc/mgSypRQZ/e96aa2fe-0a73-430f-9b5f-ce00aaeb9e92.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/VkwFF50x/f284857c-af53-42f1-a9ac-457fbef8cb2f.jpg">
+                    <img src="https://i.postimg.cc/VkwFF50x/f284857c-af53-42f1-a9ac-457fbef8cb2f.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/cJ4MVjmc/f8da9b11-7052-427d-9f37-dd05a1ec209f.jpg">
+                    <img src="https://i.postimg.cc/cJ4MVjmc/f8da9b11-7052-427d-9f37-dd05a1ec209f.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/3wJCP6By/fc17e45e-e73b-4872-bca2-26eb72e83545.jpg">
+                    <img src="https://i.postimg.cc/3wJCP6By/fc17e45e-e73b-4872-bca2-26eb72e83545.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="https://i.postimg.cc/y8TypBF8/fc7dbbba-df23-41aa-9d6c-028929622d1d.jpg">
+                    <img src="https://i.postimg.cc/y8TypBF8/fc7dbbba-df23-41aa-9d6c-028929622d1d.jpg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+            </div>
+            <p style="text-align:center; color:#6b6458; margin-top:24px; font-weight:300; font-size:0.95rem;">
+                <i class="fas fa-hand-pointer" style="color:#c8a86e;"></i> Cliquez sur une photo pour l'agrandir
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== TÉMOIGNAGES ===== -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Témoignages</h2>
+            <p class="section-subtitle">Ce que nos clients pensent de nos produits.</p>
+            <div class="temoignages-grid">
+                <div class="temoignage-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>« Une viande délicieuse, tendre et pleine de saveurs. Toute la famille a adoré ! »</blockquote>
+                    <div class="author">— Marie K.</div>
+                </div>
+                <div class="temoignage-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>« Les œufs de caille sont excellents, bien plus savoureux que les œufs de poule. »</blockquote>
+                    <div class="author">— Jean P.</div>
+                </div>
+                <div class="temoignage-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>« La caille fumée est un délice. Une découverte exceptionnelle. »</blockquote>
+                    <div class="author">— Aïssa D.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BLOG ===== -->
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <p class="section-subtitle">Tout savoir sur la caille, ses bienfaits et comment la cuisiner.</p>
+            <div class="blog-grid">
+
+                <!-- Article 1 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://i.postimg.cc/7hKyNbxL/IMG-9388.jpg" alt="Pourquoi manger de la caille" loading="lazy" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="tag">Nutrition</span>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Juin 2026</span>
+                            <span><i class="fas fa-clock"></i> 4 min de lecture</span>
+                        </div>
+                        <h4>Pourquoi manger de la caille ?</h4>
+                        <p>La viande de caille est l'une des volailles les plus complètes sur le plan nutritionnel. Avec plus de 22 g de protéines pour 100 g, un faible taux de matières grasses et une richesse en vitamines B, elle s'impose comme un choix idéal pour les sportifs, les femmes enceintes et toute personne soucieuse de sa santé.</p>
+                        <a href="#contact" class="btn-lire">Nous écrire pour en savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://i.postimg.cc/MpYm3x1h/10f777f0-c92c-4775-afde-e55aa93fe9c6.jpg" alt="Bienfaits des oeufs de caille" loading="lazy" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="tag">Santé</span>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Mai 2026</span>
+                            <span><i class="fas fa-clock"></i> 5 min de lecture</span>
+                        </div>
+                        <h4>Les bienfaits des œufs de caille</h4>
+                        <p>Bien que trois fois plus petits que les œufs de poule, les œufs de caille concentrent deux à trois fois plus de vitamines et minéraux essentiels. Riches en vitamines A, B1, B2 et en fer, ils sont particulièrement recommandés pour les enfants en croissance et les personnes souffrant d'anémie.</p>
+                        <a href="#contact" class="btn-lire">Nous écrire pour en savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://i.postimg.cc/CKPHYNP7/1a7a7370-7973-4247-ae89-042e14c2d0b3.jpg" alt="Comment cuisiner une caille fumée" loading="lazy" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="tag">Cuisine</span>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Avril 2026</span>
+                            <span><i class="fas fa-clock"></i> 6 min de lecture</span>
+                        </div>
+                        <h4>Comment cuisiner une caille fumée ?</h4>
+                        <p>La caille fumée de Terre des Cailles se prête à de nombreuses préparations : en sauce arachide, grillée avec des épices locales ou incorporée dans un riz parfumé. Découvrez nos idées recettes pour sublimer ce produit d'exception en moins de 30 minutes.</p>
+                        <a href="#contact" class="btn-lire">Nous écrire pour les recettes <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://i.postimg.cc/FKsg2qZC/1a9fe671-5836-4c5c-8dbd-9a45985a22e8.jpg" alt="Élevage de caille au Bénin" loading="lazy" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="tag">Élevage</span>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Mars 2026</span>
+                            <span><i class="fas fa-clock"></i> 5 min de lecture</span>
+                        </div>
+                        <h4>L'élevage de caille au Bénin : une filière prometteuse</h4>
+                        <p>Méconnue il y a encore quelques années, la filière caille connaît aujourd'hui une croissance remarquable au Bénin. Entre faibles coûts de production, cycle court et forte demande en milieu urbain, découvrez pourquoi de plus en plus d'éleveurs se tournent vers cette volaille d'avenir.</p>
+                        <a href="#contact" class="btn-lire">Nous écrire pour en savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://i.postimg.cc/wjkQ4Hhp/25a67a32-e257-4cd6-a3be-b28b34aab222.jpg" alt="Caille vs poulet comparaison nutritionnelle" loading="lazy" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="tag">Comparaison</span>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Février 2026</span>
+                            <span><i class="fas fa-clock"></i> 4 min de lecture</span>
+                        </div>
+                        <h4>Caille vs poulet : que choisir pour votre santé ?</h4>
+                        <p>La caille et le poulet sont deux volailles populaires, mais leurs profils nutritionnels diffèrent sensiblement. La caille offre une viande plus maigre, plus dense en protéines et en minéraux. Pour ceux qui cherchent à varier leur alimentation tout en optimisant leurs apports, la caille s'avère souvent supérieure.</p>
+                        <a href="#contact" class="btn-lire">Nous écrire pour en savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Article 6 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://i.postimg.cc/QM4ksb4b/2f7ef3eb-0e81-413a-9835-b86be46e171c.jpg" alt="Fumage technique ancestrale" loading="lazy" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="tag">Tradition</span>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Janvier 2026</span>
+                            <span><i class="fas fa-clock"></i> 3 min de lecture</span>
+                        </div>
+                        <h4>Le fumage : une technique ancestrale au service de la qualité</h4>
+                        <p>Le fumage est l'une des plus anciennes méthodes de conservation de la viande. Chez Terre des Cailles, nous perpétuons cette tradition en utilisant des essences de bois naturelles qui confèrent à nos cailles une saveur unique et authentique, sans additif chimique.</p>
+                        <a href="#contact" class="btn-lire">Nous écrire pour en savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">FAQ</h2>
+            <p class="section-subtitle">Les questions les plus fréquentes.</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Où êtes-vous situés ? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Nous sommes basés à Abomey-Calavi, Bénin.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Comment commander ? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Vous pouvez commander via notre formulaire de contact, nous appeler directement ou nous envoyer un message WhatsApp.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Livrez-vous ? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Oui, nous livrons dans tout le Bénin. Les frais de livraison dépendent de votre localisation.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Comment conserver la viande fumée ? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Conservez-la au réfrigérateur pour 5 à 7 jours, ou au congélateur pour une conservation allant jusqu'à 3 mois.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Les produits sont-ils disponibles toute l'année ? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Oui, notre production est continue toute l'année grâce à un cycle d'élevage maîtrisé et régulier.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Proposez-vous de la vente en gros ? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Oui, nous travaillons avec des revendeurs, restaurateurs et commerçants. Contactez-nous pour discuter de vos besoins spécifiques.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="badge">Contactez-nous</span>
+                    <h2>Parlons de vos besoins</h2>
+                    <p>Une question, une commande, un partenariat ? Nous sommes à votre écoute.</p>
+
+                    <div class="contact-detail">
+                        <i class="fas fa-map-pin"></i>
+                        <div><span class="label">Adresse</span><br /><span class="value">Abomey-Calavi, Bénin</span></div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <div><span class="label">Téléphone</span><br /><a href="tel:+2290195961985" class="value">+229 01 95 96 19 85</a></div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone-alt"></i>
+                        <div><span class="label">Téléphone</span><br /><a href="tel:+2290165064548" class="value">+229 01 65 06 45 48</a></div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fab fa-whatsapp"></i>
+                        <div><span class="label">WhatsApp</span><br /><a href="https://wa.me/2290143531342" target="_blank" rel="noopener" class="value">+229 01 43 53 13 42</a></div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envoyez-nous un message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" placeholder="Votre nom" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="votre@email.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Votre message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold">Envoyer <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon"><i class="fas fa-feather-alt"></i></span>
+                        Terre des Cailles
+                    </a>
+                    <p>La ferme au service de votre santé.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <a href="#produits">Produits</a>
+                    <a href="#galerie">Galerie</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="tel:+2290195961985">+229 01 95 96 19 85</a>
+                    <a href="tel:+2290165064548">+229 01 65 06 45 48</a>
+                    <a href="https://wa.me/2290143531342" target="_blank" rel="noopener">WhatsApp</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Terre des Cailles. Tous droits réservés.</span>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
