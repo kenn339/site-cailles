@@ -40,9 +40,62 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
         }
 
-        /* ===== HERO - PLEIN ÉCRAN AVEC HAUTEUR AUGMENTÉE ===== */
+        /* ===== CONTOUR DESIGN POUR LES IMAGES ===== */
+        .img-border-gold {
+            border: 4px solid #c8a86e;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transition: all 0.4s ease;
+        }
+
+        .img-border-gold:hover {
+            border-color: #b6955a;
+            box-shadow: 0 30px 60px rgba(200, 168, 110, 0.25);
+            transform: scale(1.01);
+        }
+
+        .img-border-light {
+            border: 3px solid #d4c5b0;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .img-border-light:hover {
+            border-color: #c8a86e;
+            box-shadow: 0 20px 40px rgba(200, 168, 110, 0.15);
+            transform: scale(1.01);
+        }
+
+        .img-border-double {
+            border: 4px double #c8a86e;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .img-border-double:hover {
+            border-color: #b6955a;
+            box-shadow: 0 20px 40px rgba(200, 168, 110, 0.2);
+            transform: scale(1.01);
+        }
+
+        .img-border-thin {
+            border: 2px solid #c8a86e;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease;
+        }
+
+        .img-border-thin:hover {
+            border-color: #b6955a;
+            box-shadow: 0 15px 35px rgba(200, 168, 110, 0.15);
+            transform: scale(1.01);
+        }
+
+        /* ===== HERO - PLEIN ÉCRAN AVEC IMAGE PLUS GRANDE ===== */
         .hero {
-            min-height: 110vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, #fdfaf5 0%, #f5efe8 100%);
@@ -66,7 +119,7 @@
 
         .hero .container {
             display: grid;
-            grid-template-columns: 1fr 1.1fr;
+            grid-template-columns: 1fr 1.15fr;
             gap: 30px;
             align-items: center;
             position: relative;
@@ -74,16 +127,11 @@
             width: 100%;
             max-width: 100% !important;
             padding: 0 60px !important;
-            min-height: 80vh;
         }
 
         .hero-content {
             order: 0;
             padding-right: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 500px;
         }
 
         .hero-content .badge {
@@ -94,7 +142,7 @@
             font-size: 4.5rem;
             font-weight: 900;
             line-height: 1.1;
-            margin: 16px 0 28px;
+            margin: 16px 0 24px;
         }
 
         .hero-content h1 .highlight-gold {
@@ -109,9 +157,9 @@
             font-size: 1.25rem;
             color: #5a5448;
             max-width: 100%;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
             font-weight: 300;
-            line-height: 1.9;
+            line-height: 1.8;
         }
 
         .hero-buttons {
@@ -128,20 +176,18 @@
             order: 1;
             padding-left: 20px;
             width: 100%;
-            min-height: 550px;
         }
 
         .hero-image img {
             width: 100%;
-            max-width: 700px;
+            max-width: 680px;
             height: 620px;
             object-fit: cover;
             border-radius: 30px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             display: block;
         }
 
-        /* ===== FLOATING BADGES SUR L'IMAGE ===== */
+        /* ===== FLOATING BADGES REPOSITIONNÉS ===== */
         .floating-badge {
             position: absolute;
             background: #fff;
@@ -154,19 +200,27 @@
             font-weight: 600;
             font-size: 0.9rem;
             animation: float 6s ease-in-out infinite;
-            z-index: 2;
         }
 
-        .floating-badge:nth-child(2) {
-            top: 20px;
-            right: -20px;
+        /* Badge "Qualité premium" - sur le rebord droit */
+        .floating-badge:first-of-type {
+            top: -15px;
+            right: -25px;
+            animation-delay: 0s;
+            z-index: 5;
+            background: #fff;
+            border: 2px solid #c8a86e;
+        }
+
+        /* Badge "100% local" - sur l'image en bas à gauche */
+        .floating-badge:last-of-type {
+            bottom: 30px;
+            left: 20px;
             animation-delay: 0.5s;
-        }
-
-        .floating-badge:nth-child(3) {
-            bottom: 40px;
-            right: -20px;
-            animation-delay: 1s;
+            z-index: 5;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+            border: 2px solid #c8a86e;
         }
 
         .floating-badge i {
@@ -176,64 +230,21 @@
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-10px); }
         }
 
         /* ===== SECTIONS AVEC FONDS ALTERNÉS ===== */
-        /* Section 1 - Histoire (fond clair) */
-        #histoire {
-            background: #fdfaf5;
-        }
-
-        /* Section 2 - Mission/Vision (fond légèrement plus sombre) */
-        section:nth-of-type(3) {
-            background: #f8f4ef;
-        }
-
-        /* Section 3 - Produits (fond clair) */
-        #produits {
-            background: #fdfaf5;
-        }
-
-        /* Section 4 - Pourquoi (fond légèrement plus sombre) */
-        #pourquoi {
-            background: #f5f0ea;
-        }
-
-        /* Section 5 - Pourquoi choisir (fond clair) */
-        section:nth-of-type(6) {
-            background: #fdfaf5;
-        }
-
-        /* Section 6 - Processus (fond légèrement plus sombre) */
-        section:nth-of-type(7) {
-            background: #f8f4ef;
-        }
-
-        /* Section 7 - Galerie (fond clair) */
-        #galerie {
-            background: #fdfaf5;
-        }
-
-        /* Section 8 - Témoignages (fond légèrement plus sombre) */
-        section:nth-of-type(9) {
-            background: #f5f0ea;
-        }
-
-        /* Section 9 - Blog (fond clair) */
-        #blog {
-            background: #fdfaf5;
-        }
-
-        /* Section 10 - FAQ (fond légèrement plus sombre) */
-        section:nth-of-type(11) {
-            background: #f8f4ef;
-        }
-
-        /* Section 11 - Contact (fond clair) */
-        #contact {
-            background: #fdfaf5;
-        }
+        #histoire { background: #fdfaf5; }
+        section:nth-of-type(3) { background: #f8f4ef; }
+        #produits { background: #fdfaf5; }
+        #pourquoi { background: #f5f0ea; }
+        section:nth-of-type(6) { background: #fdfaf5; }
+        section:nth-of-type(7) { background: #f8f4ef; }
+        #galerie { background: #fdfaf5; }
+        section:nth-of-type(9) { background: #f5f0ea; }
+        #blog { background: #fdfaf5; }
+        section:nth-of-type(11) { background: #f8f4ef; }
+        #contact { background: #fdfaf5; }
 
         /* ===== HISTOIRE - MÊME HAUTEUR ===== */
         .histoire-grid {
@@ -344,6 +355,29 @@
             justify-content: center;
         }
 
+        /* ===== PRODUITS - IMAGES AVEC CONTOUR ===== */
+        .produit-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            padding: 6px;
+            background: linear-gradient(135deg, #c8a86e, #a8894e);
+            border-radius: 24px 24px 0 0;
+        }
+
+        .produit-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .produit-card:hover .produit-image img {
+            transform: scale(1.06);
+        }
+
         /* ===== BLOG - PLUS LARGE ===== */
         .blog-grid {
             display: grid;
@@ -373,6 +407,8 @@
             height: 220px;
             overflow: hidden;
             flex-shrink: 0;
+            padding: 5px;
+            background: linear-gradient(135deg, #c8a86e, #a8894e);
         }
 
         .blog-card .blog-image img {
@@ -381,6 +417,7 @@
             object-fit: cover;
             display: block;
             transition: transform 0.5s ease;
+            border-radius: 0 0 15px 15px;
         }
 
         .blog-card:hover .blog-image img {
@@ -465,6 +502,12 @@
             transform: translateX(3px);
         }
 
+        /* ===== CONTACT - FORMULAIRE WHATSAPP ===== */
+        .contact-form form .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .hero .container {
@@ -472,12 +515,10 @@
                 text-align: center;
                 padding: 0 40px !important;
                 gap: 40px;
-                min-height: auto;
             }
 
             .hero-content {
                 padding-right: 0;
-                min-height: auto;
             }
 
             .hero-content p {
@@ -491,7 +532,6 @@
             .hero-image {
                 order: -1;
                 padding-left: 0;
-                min-height: auto;
             }
 
             .hero-image img {
@@ -500,8 +540,14 @@
                 margin: 0 auto;
             }
 
-            .floating-badge {
-                display: none;
+            .floating-badge:first-of-type {
+                top: -10px;
+                right: 10px;
+            }
+
+            .floating-badge:last-of-type {
+                bottom: 20px;
+                left: 10px;
             }
 
             .histoire-grid,
@@ -530,11 +576,6 @@
         }
 
         @media (max-width: 768px) {
-            .hero {
-                min-height: auto;
-                padding: 100px 0 60px;
-            }
-
             .hero-content h1 {
                 font-size: 2.4rem;
             }
@@ -550,6 +591,20 @@
             .hero-image img {
                 max-width: 100% !important;
                 height: auto !important;
+            }
+
+            .floating-badge:first-of-type {
+                top: -5px;
+                right: 5px;
+                font-size: 0.75rem;
+                padding: 8px 14px;
+            }
+
+            .floating-badge:last-of-type {
+                bottom: 15px;
+                left: 5px;
+                font-size: 0.75rem;
+                padding: 8px 14px;
             }
 
             .produits-grid {
@@ -659,6 +714,17 @@
             .blog-card .blog-body h4 {
                 font-size: 1.1rem;
             }
+
+            .floating-badge:first-of-type,
+            .floating-badge:last-of-type {
+                font-size: 0.65rem;
+                padding: 6px 12px;
+                gap: 6px;
+            }
+
+            .floating-badge i {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -719,6 +785,7 @@
                     src="images/WhatsApp%20Image%202026-07-08%20at%2017.41.35.jpeg"
                     alt="Cailles à la ferme Terre des Cailles"
                     loading="eager"
+                    class="img-border-gold"
                 />
                 <div class="floating-badge">
                     <i class="fas fa-star"></i> Qualité premium
@@ -739,6 +806,7 @@
                         src="images/WhatsApp%20Image%202026-07-09%20at%2012.13.47.jpeg"
                         alt="La ferme Terre des Cailles au Bénin"
                         loading="lazy"
+                        class="img-border-light"
                     />
                 </div>
                 <div class="histoire-content">
@@ -847,6 +915,7 @@
                         src="images/WhatsApp%20Image%202026-07-08%20at%2017.41.38.jpeg"
                         alt="Bienfaits nutritionnels de la caille"
                         loading="lazy"
+                        class="img-border-double"
                     />
                 </div>
                 <div class="pourquoi-content">
@@ -1241,7 +1310,7 @@
 
                 <div class="contact-form">
                     <h3>Envoyez-nous un message</h3>
-                    <form id="contactForm">
+                    <form id="contactForm" onsubmit="sendToWhatsApp(event)">
                         <div class="form-group">
                             <label for="name">Nom complet</label>
                             <input type="text" id="name" placeholder="Votre nom" required />
@@ -1254,7 +1323,9 @@
                             <label for="message">Message</label>
                             <textarea id="message" placeholder="Votre message..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-gold">Envoyer <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="btn btn-gold">
+                            <i class="fab fa-whatsapp"></i> Envoyer sur WhatsApp
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1301,6 +1372,30 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // ===== FORMULAIRE WHATSAPP =====
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!name || !email || !message) {
+                alert('Veuillez remplir tous les champs.');
+                return;
+            }
+            
+            const phone = '2290143531342';
+            const text = `Bonjour Terre des Cailles !%0A%0A👤 Nom : ${encodeURIComponent(name)}%0A📧 Email : ${encodeURIComponent(email)}%0A💬 Message : ${encodeURIComponent(message)}%0A%0A---%0AEnvoyé depuis votre site web.`;
+            
+            const url = `https://wa.me/${phone}?text=${text}`;
+            window.open(url, '_blank');
+            
+            document.getElementById('contactForm').reset();
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
