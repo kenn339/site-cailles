@@ -34,9 +34,8 @@ img {
     display: block;
 }
 
-/* ===== CONTAINER DOUBLE VERSION ===== */
-/* Container pleine largeur pour le Hero */
-.container-hero {
+/* ===== CONTAINER PLEINE LARGEUR ===== */
+.container {
     width: 100%;
     max-width: 100%;
     margin: 0;
@@ -44,23 +43,15 @@ img {
 }
 
 @media (min-width: 1600px) {
-    .container-hero {
+    .container {
         padding: 0 clamp(40px, 6vw, 120px);
     }
 }
 
 @media (min-width: 2000px) {
-    .container-hero {
+    .container {
         padding: 0 clamp(60px, 8vw, 160px);
     }
-}
-
-/* Container centré avec max-width pour les autres sections */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 clamp(20px, 4vw, 40px);
 }
 
 /* ===== SCROLL ANIMATIONS ===== */
@@ -226,36 +217,11 @@ header.scrolled {
     padding: 12px 0;
 }
 
-/* Le header utilise le container pleine largeur */
-header .container,
-header .container-hero {
+header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 32px;
-}
-
-/* Pour le header, on utilise le même padding que le container-hero */
-header {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-header .container {
-    max-width: 100%;
-    padding: 0 clamp(24px, 4vw, 60px);
-}
-
-@media (min-width: 1600px) {
-    header .container {
-        padding: 0 clamp(40px, 6vw, 120px);
-    }
-}
-
-@media (min-width: 2000px) {
-    header .container {
-        padding: 0 clamp(60px, 8vw, 160px);
-    }
 }
 
 .logo {
@@ -364,7 +330,7 @@ header .container {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ===== HERO SECTION - PLEINE LARGEUR ===== */
+/* ===== HERO SECTION ===== */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -381,21 +347,20 @@ header .container {
     position: absolute;
     top: -20%;
     right: -5%;
-    width: clamp(500px, 50vw, 900px);
-    height: clamp(500px, 50vw, 900px);
+    width: 700px;
+    height: 700px;
     background: radial-gradient(circle, rgba(200, 168, 110, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
 
-.hero .container-hero {
+.hero .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: clamp(40px, 6vw, 100px);
+    gap: clamp(40px, 6vw, 80px);
     align-items: center;
     position: relative;
     z-index: 1;
-    width: 100%;
 }
 
 .hero-content .badge {
@@ -405,7 +370,7 @@ header .container {
 }
 
 .hero-content h1 {
-    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
     font-weight: 900;
     line-height: 1.1;
     margin: 16px 0 24px;
@@ -416,15 +381,14 @@ header .container {
 }
 
 .hero-content p {
-    font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+    font-size: clamp(0.95rem, 1.3vw, 1.15rem);
     color: #5a5448;
-    max-width: 600px;
+    max-width: 520px;
     margin-bottom: 36px;
     font-weight: 300;
     line-height: 1.8;
 }
 
-/* Badges sous le hero */
 .hero-badges {
     display: flex;
     flex-wrap: wrap;
@@ -468,12 +432,11 @@ header .container {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100%;
 }
 
 .hero-image img {
     width: 100%;
-    max-width: 600px;
+    max-width: 540px;
     height: auto;
     aspect-ratio: 1/1;
     object-fit: cover;
@@ -518,7 +481,7 @@ header .container {
     50% { transform: translateY(-12px); }
 }
 
-/* ===== SECTIONS (Avec container centré) ===== */
+/* ===== SECTIONS ===== */
 section {
     padding: clamp(60px, 8vw, 100px) 0;
     width: 100%;
@@ -584,7 +547,6 @@ section:nth-child(even) {
     transform: scale(1.03);
 }
 
-/* Badges d'expertise */
 .expertise-badges {
     display: flex;
     flex-wrap: wrap;
@@ -616,7 +578,6 @@ section:nth-child(even) {
     font-size: 0.85rem;
 }
 
-/* Valeurs grid */
 .valeurs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -1234,6 +1195,7 @@ footer {
 /* ===== FAQ ===== */
 .faq-list {
     max-width: 800px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -1416,7 +1378,7 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-    .hero .container-hero,
+    .hero .container,
     .about-grid,
     .contact-grid {
         grid-template-columns: 1fr;
@@ -1464,12 +1426,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .container,
-    .container-hero {
-        padding: 0 20px;
-    }
-
-    header .container {
+    .container {
         padding: 0 20px;
     }
 
@@ -1572,12 +1529,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .container,
-    .container-hero {
-        padding: 0 16px;
-    }
-
-    header .container {
+    .container {
         padding: 0 16px;
     }
 
