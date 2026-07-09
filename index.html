@@ -28,7 +28,7 @@
             }
         }
 
-        /* ===== HERO - MEME STRUCTURE QUE POURQUOI ===== */
+        /* ===== HERO - PLEIN ÉCRAN ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -37,6 +37,7 @@
             padding-top: 80px;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .hero::before {
@@ -58,6 +59,13 @@
             align-items: center;
             position: relative;
             z-index: 1;
+            width: 100%;
+            max-width: 100% !important;
+            padding: 0 60px !important;
+        }
+
+        .hero-content {
+            order: 0;
         }
 
         .hero-content .badge {
@@ -94,13 +102,12 @@
             gap: 16px;
         }
 
-        /* Hero image avec floating badges */
         .hero-image {
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
-            order: 0;
+            order: 1;
         }
 
         .hero-image img {
@@ -149,6 +156,42 @@
             50% { transform: translateY(-12px); }
         }
 
+        /* ===== POURQUOI - MÊME HAUTEUR ===== */
+        .pourquoi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: stretch;
+        }
+
+        .pourquoi-image {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: stretch;
+            height: 100%;
+        }
+
+        .pourquoi-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .pourquoi-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .pourquoi-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
         /* ===== PRODUITS - BOUTONS ALIGNÉS ===== */
         .produit-card {
             display: flex;
@@ -167,12 +210,12 @@
             justify-content: center;
         }
 
-        /* ===== BLOG - CENTRÉ HORIZONTALEMENT ===== */
+        /* ===== BLOG - PLUS LARGE ===== */
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-            max-width: 1200px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 100%;
             margin: 0 auto;
         }
 
@@ -180,16 +223,112 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #f0ebe5;
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
+        }
+
+        .blog-card .blog-image {
+            height: 220px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .blog-card .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.06);
         }
 
         .blog-card .blog-body {
+            padding: 28px 28px 32px;
             display: flex;
             flex-direction: column;
             flex: 1;
         }
 
+        .blog-card .blog-body .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #c8a86e;
+            font-weight: 700;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 8px 0 10px;
+            font-size: 0.78rem;
+            color: #9a8f82;
+            font-weight: 400;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-meta i {
+            color: #c8a86e;
+            font-size: 0.75rem;
+        }
+
+        .blog-card .blog-body h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            color: #2d2a24;
+        }
+
         .blog-card .blog-body p {
+            font-size: 0.95rem;
+            color: #5a5448;
+            font-weight: 300;
+            line-height: 1.7;
             flex: 1;
+        }
+
+        .btn-lire {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #c8a86e;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 16px;
+            transition: gap 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-lire:hover {
+            gap: 10px;
+        }
+
+        .btn-lire i {
+            font-size: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-lire:hover i {
+            transform: translateX(3px);
         }
 
         /* ===== RESPONSIVE ===== */
@@ -197,6 +336,7 @@
             .hero .container {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding: 0 40px !important;
             }
 
             .hero-content p {
@@ -227,6 +367,19 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+
+            .pourquoi-grid {
+                align-items: center;
+            }
+
+            .pourquoi-image {
+                height: 400px;
+            }
+
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -236,6 +389,10 @@
 
             .section-title {
                 font-size: 2.2rem;
+            }
+
+            .hero .container {
+                padding: 0 20px !important;
             }
 
             .hero-image img {
@@ -255,8 +412,9 @@
 
             .blog-grid {
                 grid-template-columns: 1fr;
-                max-width: 480px;
+                max-width: 500px;
                 margin: 0 auto;
+                gap: 24px;
             }
 
             .footer-grid {
@@ -288,6 +446,10 @@
 
             .lightbox-prev { left: 8px; }
             .lightbox-next { right: 8px; }
+
+            .pourquoi-image {
+                height: 300px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -333,6 +495,14 @@
                 height: 38px;
                 font-size: 1rem;
             }
+
+            .blog-card .blog-body {
+                padding: 20px;
+            }
+
+            .blog-card .blog-body h4 {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -374,19 +544,6 @@
     <!-- ===== HERO ===== -->
     <section class="hero" id="accueil">
         <div class="container">
-            <div class="hero-image">
-                <img
-                    src="images/WhatsApp%20Image%202026-07-08%20at%2017.41.35.jpeg"
-                    alt="Cailles à la ferme Terre des Cailles"
-                    loading="eager"
-                />
-                <div class="floating-badge">
-                    <i class="fas fa-star"></i> Qualité premium
-                </div>
-                <div class="floating-badge">
-                    <i class="fas fa-leaf"></i> 100% local
-                </div>
-            </div>
             <div class="hero-content">
                 <span class="badge">Bienvenue chez Terre des Cailles</span>
                 <h1>
@@ -399,6 +556,19 @@
                 <div class="hero-buttons">
                     <a href="#produits" class="btn btn-primary">Découvrir nos produits</a>
                     <a href="#contact" class="btn btn-outline">Nous contacter</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img
+                    src="images/WhatsApp%20Image%202026-07-08%20at%2017.41.35.jpeg"
+                    alt="Cailles à la ferme Terre des Cailles"
+                    loading="eager"
+                />
+                <div class="floating-badge">
+                    <i class="fas fa-star"></i> Qualité premium
+                </div>
+                <div class="floating-badge">
+                    <i class="fas fa-leaf"></i> 100% local
                 </div>
             </div>
         </div>
@@ -596,11 +766,6 @@
                     <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
                 </div>
 
-                <div class="galerie-item" data-src="images/WhatsApp%20Image%202026-07-08%20at%2017.41.36.jpeg">
-                    <img src="images/WhatsApp%20Image%202026-07-08%20at%2017.41.36.jpeg" alt="Terre des Cailles" loading="lazy" />
-                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-
                 <div class="galerie-item" data-src="images/WhatsApp%20Image%202026-07-08%20at%2017.41.37.jpeg">
                     <img src="images/WhatsApp%20Image%202026-07-08%20at%2017.41.37.jpeg" alt="Terre des Cailles" loading="lazy" />
                     <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
@@ -693,6 +858,22 @@
 
                 <div class="galerie-item" data-src="images/WhatsApp%20Image%202026-07-08%20at%2017.41.45.jpeg">
                     <img src="images/WhatsApp%20Image%202026-07-08%20at%2017.41.45.jpeg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <!-- NOUVELLES IMAGES AJOUTÉES -->
+                <div class="galerie-item" data-src="images/25440840-5e23-4ff2-9cdc-d6fcc9741b22.jpeg">
+                    <img src="images/25440840-5e23-4ff2-9cdc-d6fcc9741b22.jpeg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="images/ac63f44b-c765-44ec-b893-a2b97ca72735.jpeg">
+                    <img src="images/ac63f44b-c765-44ec-b893-a2b97ca72735.jpeg" alt="Terre des Cailles" loading="lazy" />
+                    <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <div class="galerie-item" data-src="images/ad4adb42-b435-410d-a12f-d2e8b2962bc7.jpeg">
+                    <img src="images/ad4adb42-b435-410d-a12f-d2e8b2962bc7.jpeg" alt="Terre des Cailles" loading="lazy" />
                     <div class="galerie-overlay"><i class="fas fa-search-plus"></i></div>
                 </div>
 
