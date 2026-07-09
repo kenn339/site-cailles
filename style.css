@@ -1,12 +1,19 @@
 /* ==========================================================================
-   1. RESET & VARIABLES
+   1. RESET, POLICES & VARIABLES
    ========================================================================== */
+/* Chargement des polices (Exemple : Montserrat pour les titres, Poppins pour le corps) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap');
+
 :root {
-    --primary-color: #d94625; /* Le rouge/orange principal du site */
+    --primary-color: #d94625; 
+    --primary-hover: #b83518;
     --text-dark: #2c3e50;
     --text-light: #666;
-    --bg-light: #fdfbf7; /* Fond très légèrement crème comme sur la photo */
-    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --bg-light: #fdfbf7; 
+    
+    /* Hiérarchie de Polices */
+    --font-title: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
 }
 
 *, *::before, *::after {
@@ -15,45 +22,54 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden; /* Sécurité anti-débordement horizontal globale */
+    width: 100%;
+}
+
 body {
-    font-family: var(--font-main);
+    font-family: var(--font-body);
     background-color: #ffffff;
     color: var(--text-dark);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* ==========================================================================
-   2. STRUCTURE PRINCIPALE (HERO SECTION)
+   2. STRUCTURES DE BLOCS COMPOSANTS (Layout & Sections)
    ========================================================================== */
+
+/* Section Principale : Larges espacements verticaux pour laisser respirer */
 .hero-section {
     background-color: var(--bg-light);
-    padding: 60px 20px;
+    padding: 100px 24px; /* Espacement de section généreux (80px-100px) */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 85vh;
 }
 
+/* Conteneur principal centré à largeur maximale définie */
 .hero-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1200px; /* Centrage et alignement élégant */
     display: grid;
-    grid-template-columns: 1.2fr 1fr; /* Le texte prend un peu plus de place que l'image */
-    gap: 40px;
+    grid-template-columns: 1.2fr 1fr; 
+    gap: 48px; /* Grid gap constant et aéré */
     align-items: center;
 }
 
 /* ==========================================================================
-   3. COLONNE GAUCHE - CONTENU
+   3. TYPOGRAPHIE & CONTENU (COLONNE GAUCHE)
    ========================================================================== */
 .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-family: var(--font-title); /* Police forte dédiée aux titres */
+    font-size: 3rem;
     font-weight: 700;
     color: #1a1a1a;
     line-height: 1.2;
@@ -64,78 +80,102 @@ body {
 }
 
 .hero-description {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text-light);
     max-width: 550px;
 }
 
-/* Grille des badges (2 colonnes) */
+/* --- Blocs de Badges (Pills) --- */
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap; /* Flexbox en ligne avec retour à la ligne automatique */
+    gap: 8px 12px; /* Écartement vertical (8px) et horizontal (12px) */
+    margin: 12px 0;
+    width: fit-content; /* S'adapte strictement au contenu */
 }
 
 .feature-badge {
-    background: linear-gradient(135deg, rgba(217, 70, 37, 0.05), rgba(217, 70, 37, 0.1));
+    background-color: rgba(217, 70, 37, 0.08); /* Fond léger */
     color: var(--primary-color);
-    padding: 10px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    border: 1px solid rgba(217, 70, 37, 0.15);
+    padding: 6px 14px; /* Espacement intérieur précis */
+    border-radius: 6px; /* Coins légèrement arrondis (style corporate/site vitrine) */
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* Espace entre l'icône vectorielle et le texte */
 }
 
-/* Boutons d'action */
+/* --- Boutons d'action (Actionneurs) --- */
 .cta-group {
     display: flex;
-    gap: 15px;
+    gap: 16px;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .btn {
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
     text-decoration: none;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Espace pour l'indicateur visuel à droite */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-}
-
+/* Bouton Principal */
 .btn-primary {
     background-color: var(--primary-color);
     color: #ffffff;
-    box-shadow: 0 4px 15px rgba(217, 70, 37, 0.3);
+    box-shadow: 0 4px 14px rgba(217, 70, 37, 0.25);
 }
 
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Bouton Secondaire (Outline) */
 .btn-secondary {
     background-color: transparent;
+    color: var(--text-dark);
+    border: 2px solid #e2e8f0;
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary-color);
     color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    background-color: rgba(217, 70, 37, 0.02);
+}
+
+/* Comportement dynamique de la flèche au survol */
+.btn .arrow {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover .arrow {
+    transform: translateX(4px); /* Translation vers la droite au survol */
 }
 
 .hero-footer-text {
-    font-size: 0.75rem;
-    color: #999;
+    font-size: 0.8rem;
+    color: #888;
 }
 
 /* ==========================================================================
-   4. COLONNE DROITE - IMAGE ET BADGES
+   4. VISUELS CORPO (COLONNE DROITE)
    ========================================================================== */
 .hero-image-container {
     position: relative;
     width: 100%;
-    border-radius: 20px;
-    overflow: hidden; /* Pour que l'image respecte les bords arrondis du conteneur */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 12px; /* Rayon harmonisé pour site vitrine */
+    overflow: hidden; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
 }
 
 .hero-image {
@@ -145,78 +185,97 @@ body {
     object-fit: cover;
 }
 
-/* Petit badge en haut à droite sur l'image */
+/* Petit badge de mise en avant sur l'image */
 .top-badge {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: rgba(255, 255, 255, 0.9);
+    top: 16px;
+    right: 16px;
+    background-color: #ffffff;
     color: var(--primary-color);
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 0.65rem;
-    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* Badge d'expérience en bas à gauche sur l'image */
+/* Badge d'indicateur clé en bas à gauche */
 .experience-badge {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 24px;
+    left: 24px;
     background-color: #ffffff;
-    padding: 8px 12px;
+    padding: 12px 20px; /* Marges intérieures généreuses */
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .experience-badge strong {
-    font-size: 1.1rem;
+    font-family: var(--font-title);
+    font-size: 1.4rem;
     color: #1a1a1a;
+    line-height: 1.1;
 }
 
 .experience-badge span {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: var(--text-light);
 }
 
 /* ==========================================================================
-   5. RESPONSIVE DESIGN (Pour tablettes et mobiles)
+   5. RESPONSIVE DESIGN
    ========================================================================== */
 @media (max-width: 992px) {
+    .hero-section {
+        padding: 60px 20px; /* Réduction des paddings de section sur mobile */
+    }
+
     .hero-container {
-        grid-template-columns: 1fr; /* Passe sur une seule colonne */
-        text-align: center;
+        grid-template-columns: 1fr; /* Passage automatique en une seule colonne */
+        gap: 40px;
     }
     
-    .hero-description, .features-grid {
+    .hero-content {
+        text-align: center;
+        align-items: center; /* Centre les éléments flex (boutons, badges) */
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-description {
         margin: 0 auto;
+    }
+
+    .features-grid {
+        justify-content: center; /* Centre les badges alignés */
     }
     
     .cta-group {
         justify-content: center;
-        flex-direction: column;
         width: 100%;
-    }
-    
-    .btn {
-        width: 100%;
-        max-width: 400px;
     }
     
     .hero-image-container {
-        max-width: 500px;
+        max-width: 550px;
         margin: 0 auto;
     }
 }
 
 @media (max-width: 576px) {
-    .features-grid {
-        grid-template-columns: 1fr; /* Les badges passent les uns sous les autres sur mobile */
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .cta-group {
+        flex-direction: column; /* Les boutons s'empilent sur très petit écran */
+        width: 100%;
     }
     
-    .hero-title {
-        font-size: 1.8rem;
+    .btn {
+        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
     }
 }
