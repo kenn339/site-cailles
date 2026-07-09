@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terre des Cailles - La ferme au service de votre santé</title>
     
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/jpeg" href="images/WhatsApp%20Image%202026-07-09%20at%2016.06.25.jpeg" />
+    <link rel="apple-touch-icon" href="images/WhatsApp%20Image%202026-07-09%20at%2016.06.25.jpeg" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -40,37 +44,7 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
         }
 
-        /* ===== LOGO AVEC IMAGE ===== */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: #2d2a24;
-        }
-
-        .logo-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
-            border: 2px solid #c8a86e;
-        }
-
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* ===== CONTOUR DESIGN POUR LES IMAGES ===== */
+        /* ===== CONTOUR DESIGN POUR LES IMAGES (sauf produits & blog) ===== */
         .img-border-gold {
             border: 4px solid #c8a86e;
             border-radius: 30px;
@@ -110,7 +84,48 @@
             transform: scale(1.01);
         }
 
-        /* ===== HERO - PLEIN ÉCRAN ===== */
+        /* ===== PRODUITS - SANS BORDURE ===== */
+        .produit-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 24px 24px 0 0;
+        }
+
+        .produit-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            border-radius: 0;
+        }
+
+        .produit-card:hover .produit-image img {
+            transform: scale(1.06);
+        }
+
+        /* ===== BLOG - SANS BORDURE ===== */
+        .blog-card .blog-image {
+            height: 220px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .blog-card .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            border-radius: 0;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.06);
+        }
+
+        /* ===== HERO - RAPPROCHÉ ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -137,13 +152,13 @@
         .hero .container {
             display: grid;
             grid-template-columns: 1fr 1.15fr;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
             position: relative;
             z-index: 1;
             width: 100%;
             max-width: 100% !important;
-            padding: 0 60px !important;
+            padding: 0 40px !important;
         }
 
         .hero-content {
@@ -352,26 +367,7 @@
             height: 100%;
         }
 
-        /* ===== PRODUITS - SANS BORDURE ===== */
-        .produit-image {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-            border-radius: 24px 24px 0 0;
-        }
-
-        .produit-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .produit-card:hover .produit-image img {
-            transform: scale(1.06);
-        }
-
+        /* ===== PRODUITS - BOUTONS ALIGNÉS ===== */
         .produit-card {
             display: flex;
             flex-direction: column;
@@ -389,26 +385,7 @@
             justify-content: center;
         }
 
-        /* ===== BLOG - SANS BORDURE ===== */
-        .blog-card .blog-image {
-            height: 220px;
-            overflow: hidden;
-            flex-shrink: 0;
-            border-radius: 20px 20px 0 0;
-        }
-
-        .blog-card .blog-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .blog-card:hover .blog-image img {
-            transform: scale(1.06);
-        }
-
+        /* ===== BLOG - PLUS LARGE ===== */
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -511,13 +488,19 @@
             transform: translateX(3px);
         }
 
+        /* ===== CONTACT - FORMULAIRE WHATSAPP ===== */
+        .contact-form form .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .hero .container {
                 grid-template-columns: 1fr;
                 text-align: center;
                 padding: 0 40px !important;
-                gap: 40px;
+                gap: 30px;
             }
 
             .hero-content {
@@ -728,15 +711,6 @@
             .floating-badge i {
                 font-size: 0.8rem;
             }
-
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            .logo-icon {
-                width: 36px;
-                height: 36px;
-            }
         }
     </style>
 </head>
@@ -756,9 +730,7 @@
     <header id="header">
         <div class="container">
             <a href="#" class="logo">
-                <span class="logo-icon">
-                    <img src="images/WhatsApp%20Image%202026-07-09%20at%2016.06.25.jpeg" alt="Terre des Cailles" />
-                </span>
+                <span class="logo-icon"><i class="fas fa-feather-alt"></i></span>
                 Terre des Cailles
             </a>
             <nav class="nav-links" id="navLinks">
@@ -1348,9 +1320,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <span class="logo-icon">
-                            <img src="images/WhatsApp%20Image%202026-07-09%20at%2016.06.25.jpeg" alt="Terre des Cailles" />
-                        </span>
+                        <span class="logo-icon"><i class="fas fa-feather-alt"></i></span>
                         Terre des Cailles
                     </a>
                     <p>La ferme au service de votre santé.</p>
