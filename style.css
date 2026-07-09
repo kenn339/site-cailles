@@ -40,9 +40,10 @@
         }
 
         .container {
-            max-width: 1200px;
+            width: 100%;
+            max-width: 1800px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 clamp(20px, 4vw, 100px);
         }
 
         /* ===== TYPOGRAPHIE ===== */
@@ -1277,7 +1278,7 @@
         .footer-bottom .socials a:hover {
             opacity: 1;
             color: #c8a86e;
-        }/* ===== RESPONSIVE ===== */
+        } /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .hero .container {
                 grid-template-columns: 1fr;
@@ -1481,8 +1482,7 @@
                 <p>Élevées en plein air dans le respect de la nature, nos cailles vous offrent des œufs d'une qualité gustative et nutritionnelle incomparable.</p>
                 <div class="hero-buttons">
                     <a href="#produits" class="btn btn-primary">Découvrir nos produits</a>
-                    <a href="#pourquoi" class="btn btn-outline">En savoir plus</a>
-                </div>
+                    <a href="#pourquoi" class="btn btn-outline">En savoir plus</a></div>
             </div>
             <div class="hero-image">
                 <img src="https://images.pexels.com/photos/1522537/pexels-photo-1522537.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Œufs de caille frais" />
