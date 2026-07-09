@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terre des Cailles - La ferme au service de votre santé</title>
     
-    <!-- ===== FAVICON ===== -->
-    <link rel="icon" type="image/jpeg" href="images/WhatsApp%20Image%202026-07-09%20at%2016.06.25.jpeg" />
-    <link rel="apple-touch-icon" href="images/WhatsApp%20Image%202026-07-09%20at%2016.06.25.jpeg" />
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -42,6 +38,36 @@
             background: rgba(248, 244, 239, 0.98) !important;
             backdrop-filter: blur(12px);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ===== LOGO AVEC IMAGE ===== */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #2d2a24;
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid #c8a86e;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* ===== CONTOUR DESIGN POUR LES IMAGES ===== */
@@ -84,7 +110,7 @@
             transform: scale(1.01);
         }
 
-        /* ===== HERO - PLEIN ÉCRAN AVEC IMAGE PLUS GRANDE ===== */
+        /* ===== HERO - PLEIN ÉCRAN ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -111,7 +137,7 @@
         .hero .container {
             display: grid;
             grid-template-columns: 1fr 1.15fr;
-            gap: 30px;
+            gap: 20px;
             align-items: center;
             position: relative;
             z-index: 1;
@@ -122,7 +148,7 @@
 
         .hero-content {
             order: 0;
-            padding-right: 20px;
+            padding-right: 10px;
         }
 
         .hero-content .badge {
@@ -165,7 +191,7 @@
             align-items: center;
             position: relative;
             order: 1;
-            padding-left: 20px;
+            padding-left: 10px;
             width: 100%;
         }
 
@@ -178,7 +204,7 @@
             display: block;
         }
 
-        /* ===== FLOATING BADGES REPOSITIONNÉS ===== */
+        /* ===== FLOATING BADGES ===== */
         .floating-badge {
             position: absolute;
             background: #fff;
@@ -326,25 +352,7 @@
             height: 100%;
         }
 
-        /* ===== PRODUITS - BOUTONS ALIGNÉS ===== */
-        .produit-card {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .produit-body {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .produit-body .btn {
-            margin-top: auto;
-            width: 100%;
-            justify-content: center;
-        }
-
-        /* ===== PRODUITS - IMAGES SANS BORDURE ===== */
+        /* ===== PRODUITS - SANS BORDURE ===== */
         .produit-image {
             height: 220px;
             overflow: hidden;
@@ -364,7 +372,43 @@
             transform: scale(1.06);
         }
 
-        /* ===== BLOG - PLUS LARGE ===== */
+        .produit-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .produit-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .produit-body .btn {
+            margin-top: auto;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ===== BLOG - SANS BORDURE ===== */
+        .blog-card .blog-image {
+            height: 220px;
+            overflow: hidden;
+            flex-shrink: 0;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .blog-card .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.06);
+        }
+
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -387,27 +431,6 @@
         .blog-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
-        }
-
-        .blog-card .blog-image {
-            height: 220px;
-            overflow: hidden;
-            flex-shrink: 0;
-            padding: 5px;
-            background: linear-gradient(135deg, #c8a86e, #a8894e);
-        }
-
-        .blog-card .blog-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-            border-radius: 0 0 15px 15px;
-        }
-
-        .blog-card:hover .blog-image img {
-            transform: scale(1.06);
         }
 
         .blog-card .blog-body {
@@ -486,12 +509,6 @@
 
         .btn-lire:hover i {
             transform: translateX(3px);
-        }
-
-        /* ===== CONTACT - FORMULAIRE WHATSAPP ===== */
-        .contact-form form .btn {
-            width: 100%;
-            justify-content: center;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -711,6 +728,15 @@
             .floating-badge i {
                 font-size: 0.8rem;
             }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+            }
         }
     </style>
 </head>
@@ -730,7 +756,9 @@
     <header id="header">
         <div class="container">
             <a href="#" class="logo">
-                <span class="logo-icon"><i class="fas fa-feather-alt"></i></span>
+                <span class="logo-icon">
+                    <img src="images/WhatsApp%20Image%202026-07-09%20at%2016.06.25.jpeg" alt="Terre des Cailles" />
+                </span>
                 Terre des Cailles
             </a>
             <nav class="nav-links" id="navLinks">
@@ -1290,7 +1318,7 @@
                     </div>
                     <div class="contact-detail">
                         <i class="fab fa-whatsapp"></i>
-                        <div><span class="label">WhatsApp</span><br /><a href="https://wa.me/22957052932" target="_blank" rel="noopener" class="value">+229 57 05 29 32</a></div>
+                        <div><span class="label">WhatsApp</span><br /><a href="https://wa.me/2290143531342" target="_blank" rel="noopener" class="value">+229 01 43 53 13 42</a></div>
                     </div>
                 </div>
 
@@ -1320,7 +1348,9 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <span class="logo-icon"><i class="fas fa-feather-alt"></i></span>
+                        <span class="logo-icon">
+                            <img src="images/WhatsApp%20Image%202026-07-09%20at%2016.06.25.jpeg" alt="Terre des Cailles" />
+                        </span>
                         Terre des Cailles
                     </a>
                     <p>La ferme au service de votre santé.</p>
@@ -1336,7 +1366,7 @@
                     <h4>Contact</h4>
                     <a href="tel:+2290195961985">+229 01 95 96 19 85</a>
                     <a href="tel:+2290165064548">+229 01 65 06 45 48</a>
-                    <a href="https://wa.me/22957052932" target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="https://wa.me/2290143531342" target="_blank" rel="noopener">WhatsApp</a>
                 </div>
                 <div class="footer-col">
                     <h4>Informations</h4>
@@ -1368,7 +1398,7 @@
                 return;
             }
             
-            const phone = '22957052932';
+            const phone = '2290143531342';
             const text = `Bonjour Terre des Cailles !%0A%0A👤 Nom : ${encodeURIComponent(name)}%0A💬 Message : ${encodeURIComponent(message)}%0A%0A---%0AEnvoyé depuis votre site web.`;
             
             const url = `https://wa.me/${phone}?text=${text}`;
