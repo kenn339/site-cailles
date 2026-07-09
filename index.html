@@ -28,7 +28,19 @@
             }
         }
 
-        /* ===== HERO - PLEIN ÉCRAN AVEC RAPPROCHEMENT ===== */
+        /* ===== HEADER - FOND LÉGÈREMENT MOINS CLAIR ===== */
+        header {
+            background: rgba(253, 250, 245, 0.98) !important;
+            backdrop-filter: blur(12px);
+        }
+
+        header.scrolled {
+            background: rgba(248, 244, 239, 0.98) !important;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ===== HERO - PLEIN ÉCRAN AVEC IMAGE PLUS LARGE ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -54,7 +66,7 @@
 
         .hero .container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.1fr;
             gap: 30px;
             align-items: center;
             position: relative;
@@ -110,11 +122,12 @@
             position: relative;
             order: 1;
             padding-left: 20px;
+            width: 100%;
         }
 
         .hero-image img {
             width: 100%;
-            max-width: 550px;
+            max-width: 650px;
             height: 580px;
             object-fit: cover;
             border-radius: 30px;
@@ -156,6 +169,62 @@
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-12px); }
+        }
+
+        /* ===== SECTIONS AVEC FONDS ALTERNÉS ===== */
+        /* Section 1 - Histoire (fond clair) */
+        #histoire {
+            background: #fdfaf5;
+        }
+
+        /* Section 2 - Mission/Vision (fond légèrement plus sombre) */
+        section:nth-of-type(3) {
+            background: #f8f4ef;
+        }
+
+        /* Section 3 - Produits (fond clair) */
+        #produits {
+            background: #fdfaf5;
+        }
+
+        /* Section 4 - Pourquoi (fond légèrement plus sombre) */
+        #pourquoi {
+            background: #f5f0ea;
+        }
+
+        /* Section 5 - Pourquoi choisir (fond clair) */
+        section:nth-of-type(6) {
+            background: #fdfaf5;
+        }
+
+        /* Section 6 - Processus (fond légèrement plus sombre) */
+        section:nth-of-type(7) {
+            background: #f8f4ef;
+        }
+
+        /* Section 7 - Galerie (fond clair) */
+        #galerie {
+            background: #fdfaf5;
+        }
+
+        /* Section 8 - Témoignages (fond légèrement plus sombre) */
+        section:nth-of-type(9) {
+            background: #f5f0ea;
+        }
+
+        /* Section 9 - Blog (fond clair) */
+        #blog {
+            background: #fdfaf5;
+        }
+
+        /* Section 10 - FAQ (fond légèrement plus sombre) */
+        section:nth-of-type(11) {
+            background: #f8f4ef;
+        }
+
+        /* Section 11 - Contact (fond clair) */
+        #contact {
+            background: #fdfaf5;
         }
 
         /* ===== HISTOIRE - MÊME HAUTEUR ===== */
