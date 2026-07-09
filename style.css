@@ -1,166 +1,2068 @@
-/* ===== MODIFICATIONS FULL SCREEN ===== */
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Caillerie - Œufs de Caille Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Container - 100% de largeur */
-.container {
-    max-width: 100% !important;
-    padding: 0 5%;
-    margin: 0 auto;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* Header - full width */
-header {
-    padding: 18px 5%;
-    width: 100%;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2d2a24;
+            background-color: #fdfaf5;
+            line-height: 1.7;
+        }
 
-header .container {
-    padding: 0;
-    max-width: 100%;
-}
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-header.scrolled {
-    padding: 12px 5%;
-}
+        ul {
+            list-style: none;
+        }
 
-/* Hero - full width */
-.hero {
-    width: 100%;
-}
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-.hero .container {
-    max-width: 100% !important;
-    padding: 0 5%;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-/* Toutes les sections */
-section {
-    width: 100%;
-}
+        /* ===== TYPOGRAPHIE ===== */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #2d2a24;
+        }
 
-section .container {
-    max-width: 100% !important;
-    padding: 0 5%;
-}
+        .section-title {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 12px;
+            position: relative;
+        }
 
-/* Footer - full width */
-footer {
-    padding: 60px 5% 30px;
-    width: 100%;
-}
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #c8a86e, #a8894e);
+            margin: 16px auto 0;
+            border-radius: 4px;
+        }
 
-footer .container {
-    max-width: 100% !important;
-    padding: 0;
-}
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #6b6458;
+            max-width: 640px;
+            margin: 0 auto 48px;
+            font-weight: 300;
+        }
 
-/* Suppression des max-width fixes */
-.histoire-grid,
-.mission-vision-grid,
-.pourquoi-grid,
-.contact-grid,
-.produits-grid,
-.blog-grid,
-.temoignages-grid,
-.choisir-grid,
-.valeurs-grid,
-.processus-steps,
-.galerie-grid {
-    max-width: 100%;
-}
+        .badge {
+            display: inline-block;
+            background: #c8a86e;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 4px 16px;
+            border-radius: 30px;
+            margin-bottom: 12px;
+        }
 
-/* Ajustements responsifs */
-@media (max-width: 1024px) {
-    section .container {
-        padding: 0 4%;
-    }
-    
-    header {
-        padding: 18px 4%;
-    }
-    
-    header.scrolled {
-        padding: 12px 4%;
-    }
-}
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
 
-@media (max-width: 768px) {
-    section .container {
-        padding: 0 4%;
-    }
-    
-    header {
-        padding: 18px 4%;
-    }
-    
-    header.scrolled {
-        padding: 12px 4%;
-    }
-    
-    footer {
-        padding: 40px 4% 20px;
-    }
-}
+        .btn-primary {
+            background: #2d2a24;
+            color: #fff;
+        }
 
-@media (max-width: 480px) {
-    section .container {
-        padding: 0 3%;
-    }
-    
-    header {
-        padding: 14px 3%;
-    }
-    
-    footer {
-        padding: 30px 3% 15px;
-    }
-}
+        .btn-primary:hover {
+            background: #c8a86e;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(200, 168, 110, 0.3);
+        }
 
-/* Suppression de la limite de largeur pour les éléments spécifiques */
-.faq-list {
-    max-width: 100%;
-    width: 100%;
-}
+        .btn-outline {
+            background: transparent;
+            color: #2d2a24;
+            border: 2px solid #2d2a24;
+        }
 
-.hero-content p {
-    max-width: 100%;
-}
+        .btn-outline:hover {
+            background: #2d2a24;
+            color: #fff;
+            transform: translateY(-3px);
+        }
 
-.section-subtitle {
-    max-width: 100%;
-}
+        .btn-gold {
+            background: #c8a86e;
+            color: #fff;
+        }
 
-.footer-brand p {
-    max-width: 100%;
-}
+        .btn-gold:hover {
+            background: #b6955a;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(200, 168, 110, 0.4);
+        }
 
-/* Ajustement des images pour qu'elles restent proportionnées */
-.hero-image img {
-    max-width: 100%;
-    width: 100%;
-}
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 18px 0;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
 
-.produit-image img,
-.histoire-image img,
-.pourquoi-image img,
-.blog-card .blog-image img,
-.galerie-item img {
-    width: 100%;
-}
+        header.scrolled {
+            background: rgba(253, 250, 245, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+            padding: 12px 0;
+        }
 
-/* Suppression des conteneurs à largeur fixe */
-.produits-grid {
-    max-width: 100%;
-}
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.blog-grid {
-    max-width: 100%;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #2d2a24;
+        }
 
-/* Pour les éléments qui avaient des max-width */
-.temoignages-grid,
-.choisir-grid,
-.valeurs-grid,
-.processus-steps,
-.galerie-grid {
-    max-width: 100%;
-}
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: #c8a86e;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2d2a24;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c8a86e;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #c8a86e;
+        }
+
+        .nav-cta {
+            background: #c8a86e;
+            color: #fff !important;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: #b6955a !important;
+            color: #fff !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2.5px;
+            background: #2d2a24;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #fdfaf5 0%, #f5efe8 100%);
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200, 168, 110, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content .badge {
+            background: #2d2a24;
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 16px 0 24px;
+        }
+
+        .hero-content h1 span {
+            color: #c8a86e;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #5a5448;
+            max-width: 520px;
+            margin-bottom: 36px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        /* ===== HERO IMAGE ===== */
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            display: block;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: #fff;
+            padding: 12px 20px;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-badge:nth-child(2) {
+            top: 20px;
+            right: -20px;
+            animation-delay: 0.5s;
+        }
+
+        .floating-badge:nth-child(3) {
+            bottom: 40px;
+            left: -30px;
+            animation-delay: 1s;
+        }
+
+        .floating-badge i {
+            color: #c8a86e;
+            font-size: 1.2rem;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background: #f8f4ef;
+        }
+
+        /* ===== HISTOIRE ===== */
+        .histoire-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .histoire-image {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .histoire-image img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .histoire-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .histoire-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+        }
+
+        .histoire-content p {
+            color: #5a5448;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        .histoire-content .highlight {
+            font-weight: 600;
+            color: #2d2a24;
+            font-style: italic;
+            border-left: 4px solid #c8a86e;
+            padding-left: 20px;
+        }
+
+        /* ===== MISSION / VISION ===== */
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .mv-card {
+            background: #fff;
+            padding: 40px 36px;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0ebe5;
+            transition: all 0.3s ease;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .mv-card .icon {
+            font-size: 2.4rem;
+            color: #c8a86e;
+            margin-bottom: 16px;
+        }
+
+        .mv-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .mv-card p {
+            color: #5a5448;
+            font-weight: 300;
+        }
+
+        /* ===== VALEURS ===== */
+        .valeurs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .valeur-item {
+            background: #fff;
+            padding: 28px 16px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #f0ebe5;
+            transition: all 0.3s ease;
+        }
+
+        .valeur-item:hover {
+            border-color: #c8a86e;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(200, 168, 110, 0.12);
+        }
+
+        .valeur-item i {
+            font-size: 2rem;
+            color: #c8a86e;
+            margin-bottom: 8px;
+        }
+
+        .valeur-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* ===== PRODUITS ===== */
+        .produits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .produit-card {
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0ebe5;
+            transition: all 0.3s ease;
+        }
+
+        .produit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .produit-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .produit-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .produit-card:hover .produit-image img {
+            transform: scale(1.06);
+        }
+
+        .produit-image .star {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #c8a86e;
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .produit-body {
+            padding: 28px 24px;
+        }
+
+        .produit-body .badge-produit {
+            display: inline-block;
+            background: #f0ebe5;
+            color: #5a5448;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 14px;
+            border-radius: 30px;
+            margin-bottom: 8px;
+        }
+
+        .produit-body h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .produit-body p {
+            color: #5a5448;
+            font-weight: 300;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .produit-body ul {
+            margin-bottom: 16px;
+        }
+
+        .produit-body ul li {
+            font-size: 0.9rem;
+            color: #5a5448;
+            padding: 2px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .produit-body ul li i {
+            color: #c8a86e;
+            font-size: 0.7rem;
+        }
+
+        .produit-body .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ===== POURQUOI LA CAILLE ===== */
+        .pourquoi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .pourquoi-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 8px;
+        }
+
+        .pourquoi-content .slogan {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #c8a86e;
+            margin-bottom: 20px;
+        }
+
+        .pourquoi-content p {
+            color: #5a5448;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        .nutriments {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .nutriment {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            padding: 10px 16px;
+            border-radius: 12px;
+            border: 1px solid #f0ebe5;
+        }
+
+        .nutriment i {
+            color: #c8a86e;
+            font-size: 1rem;
+        }
+
+        .nutriment span {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .pourquoi-image {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .pourquoi-image img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .pourquoi-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* ===== POURQUOI CHOISIR ===== */
+        .choisir-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .choisir-item {
+            background: #fff;
+            padding: 32px 20px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #f0ebe5;
+            transition: all 0.3s ease;
+        }
+
+        .choisir-item:hover {
+            border-color: #c8a86e;
+            transform: translateY(-4px);
+        }
+
+        .choisir-item i {
+            font-size: 2.4rem;
+            color: #c8a86e;
+            margin-bottom: 12px;
+        }
+
+        .choisir-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* ===== PROCESSUS ===== */
+        .processus-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+        }
+
+        .processus-step {
+            background: #fff;
+            padding: 24px 16px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #f0ebe5;
+        }
+
+        .processus-step .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #c8a86e;
+            color: #fff;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .processus-step h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* ===== GALERIE ===== */
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .galerie-item {
+            aspect-ratio: 1/1;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .galerie-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .galerie-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .galerie-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(45, 42, 36, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .galerie-item:hover .galerie-overlay {
+            opacity: 1;
+        }
+
+        .galerie-overlay i {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(20, 18, 14, 0.93);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content img {
+            max-width: 90vw;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.12);
+            border: none;
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: rgba(200, 168, 110, 0.7);
+        }
+
+        .lightbox-close {
+            top: 20px;
+            right: 20px;
+        }
+
+        .lightbox-prev {
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-next {
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* ===== TÉMOIGNAGES ===== */
+        .temoignages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .temoignage-card {
+            background: #fff;
+            padding: 32px 28px;
+            border-radius: 24px;
+            border: 1px solid #f0ebe5;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
+        }
+
+        .temoignage-card .stars {
+            color: #c8a86e;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .temoignage-card blockquote {
+            font-style: italic;
+            color: #2d2a24;
+            font-weight: 400;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        .temoignage-card .author {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* ===== BLOG ===== */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .blog-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #f0ebe5;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
+        }
+
+        .blog-card .blog-image {
+            height: 200px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .blog-card .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.06);
+        }
+
+        .blog-card .blog-body {
+            padding: 24px 24px 28px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .blog-card .blog-body .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #c8a86e;
+            font-weight: 700;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 8px 0 10px;
+            font-size: 0.78rem;
+            color: #9a8f82;
+            font-weight: 400;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-meta i {
+            color: #c8a86e;
+            font-size: 0.75rem;
+        }
+
+        .blog-card .blog-body h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            color: #2d2a24;
+        }
+
+        .blog-card .blog-body p {
+            font-size: 0.9rem;
+            color: #5a5448;
+            font-weight: 300;
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .btn-lire {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #c8a86e;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 16px;
+            transition: gap 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-lire:hover {
+            gap: 10px;
+        }
+
+        .btn-lire i {
+            font-size: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-lire:hover i {
+            transform: translateX(3px);
+        }
+
+        /* ===== FAQ ===== */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid #f0ebe5;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #c8a86e;
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            background: #fff;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+            color: #2d2a24;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: #c8a86e;
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 24px;
+            color: #5a5448;
+            font-weight: 300;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding: 0 24px 24px;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            color: #5a5448;
+            font-weight: 300;
+            margin-bottom: 32px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .contact-detail i {
+            width: 44px;
+            height: 44px;
+            background: #f0ebe5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c8a86e;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-detail .label {
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .contact-detail .value {
+            color: #5a5448;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        .contact-detail a.value:hover {
+            color: #c8a86e;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #f0ebe5;
+        }
+
+        .contact-form h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 16px;
+        }
+
+        .contact-form label {
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #e8e0d8;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: #fdfaf5;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #c8a86e;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #2d2a24;
+            color: #cbc4b8;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-brand .logo {
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand .logo .logo-icon {
+            background: #c8a86e;
+        }
+
+        .footer-brand p {
+            font-weight: 300;
+            font-size: 0.95rem;
+            max-width: 300px;
+            opacity: 0.8;
+        }
+
+        .footer-col h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .footer-col a {
+            display: block;
+            font-weight: 300;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, color 0.3s ease;
+            padding: 4px 0;
+            color: #cbc4b8;
+        }
+
+        .footer-col a:hover {
+            opacity: 1;
+            color: #c8a86e;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        .footer-bottom .socials {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-bottom .socials a {
+            color: #cbc4b8;
+            opacity: 0.6;
+            transition: opacity 0.3s ease, color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom .socials a:hover {
+            opacity: 1;
+            color: #c8a86e;
+        }/* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin: 0 auto 36px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                max-width: 420px;
+                height: 420px;
+                margin: 0 auto;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+
+            .histoire-grid,
+            .mission-vision-grid,
+            .pourquoi-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: #fdfaf5;
+                flex-direction: column;
+                padding: 80px 32px 32px;
+                gap: 20px;
+                box-shadow: -8px 0 40px rgba(0, 0, 0, 0.06);
+                transition: right 0.4s ease;
+                z-index: 1000;
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .hamburger {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .produits-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand p {
+                margin: 0 auto;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .contact-form {
+                padding: 24px;
+            }
+
+            .nutriments {
+                grid-template-columns: 1fr;
+            }
+
+            .processus-steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .galerie-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
+            .lightbox-prev {
+                left: 8px;
+            }
+            .lightbox-next {
+                right: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-image img {
+                height: 300px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+
+            .produit-body {
+                padding: 20px 16px;
+            }
+
+            .processus-steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .galerie-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+
+            .contact-detail {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fas fa-egg"></i></span>
+                La Caillerie
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#histoire">Histoire</a>
+                <a href="#produits">Produits</a>
+                <a href="#pourquoi">Pourquoi la Caille</a>
+                <a href="#galerie">Galerie</a>
+                <a href="#temoignages">Avis</a>
+                <a href="#contact" class="nav-cta">Commander</a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">Élevage artisanal</span>
+                <h1>Des œufs de caille <span>d'exception</span></h1>
+                <p>Élevées en plein air dans le respect de la nature, nos cailles vous offrent des œufs d'une qualité gustative et nutritionnelle incomparable.</p>
+                <div class="hero-buttons">
+                    <a href="#produits" class="btn btn-primary">Découvrir nos produits</a>
+                    <a href="#pourquoi" class="btn btn-outline">En savoir plus</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.pexels.com/photos/1522537/pexels-photo-1522537.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Œufs de caille frais" />
+                <div class="floating-badge"><i class="fas fa-leaf"></i> 100% Bio</div>
+                <div class="floating-badge"><i class="fas fa-star"></i> Fraîcheur garantie</div>
+                <div class="floating-badge"><i class="fas fa-heart"></i> Riche en protéines</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HISTOIRE ===== -->
+    <section id="histoire">
+        <div class="container">
+            <div class="histoire-grid">
+                <div class="histoire-image">
+                    <img src="https://images.pexels.com/photos/796608/pexels-photo-796608.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ferme de cailles" />
+                </div>
+                <div class="histoire-content">
+                    <span class="badge">Notre histoire</span>
+                    <h2>Une passion familiale depuis 3 générations</h2>
+                    <p>Notre aventure commence en 1985, lorsque la famille Durand décide de se consacrer à l'élevage de cailles. Située au cœur de la campagne française, notre ferme perpétue des méthodes traditionnelles alliées aux connaissances modernes.</p>
+                    <p>Aujourd'hui, nous élevons plus de 2000 cailles en liberté, leur offrant un cadre de vie respectueux et une alimentation 100% végétale.</p>
+                    <p class="highlight">"La qualité d'un œuf se mesure à la vie que mène la caille qui l'a pondu."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MISSION & VALEURS ===== -->
+    <section id="mission">
+        <div class="container">
+            <h2 class="section-title">Notre engagement</h2>
+            <p class="section-subtitle">Des valeurs qui guident chaque étape de notre production</p>
+            <div class="mission-vision-grid">
+                <div class="mv-card">
+                    <div class="icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Notre Mission</h3>
+                    <p>Proposer des œufs de caille d'une qualité exceptionnelle, issus d'un élevage responsable et durable, tout en préservant le bien-être animal.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="icon"><i class="fas fa-eye"></i></div>
+                    <h3>Notre Vision</h3>
+                    <p>Devenir la référence française de l'œuf de caille de qualité, en alliant tradition, innovation et respect de l'environnement.</p>
+                </div>
+            </div>
+            <div class="valeurs-grid">
+                <div class="valeur-item">
+                    <i class="fas fa-seedling"></i>
+                    <h4>Bien-être animal</h4>
+                </div>
+                <div class="valeur-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h4>Fabrication artisanale</h4>
+                </div>
+                <div class="valeur-item">
+                    <i class="fas fa-recycle"></i>
+                    <h4>Écologie</h4>
+                </div>
+                <div class="valeur-item">
+                    <i class="fas fa-users"></i>
+                    <h4>Transparence</h4>
+                </div>
+                <div class="valeur-item">
+                    <i class="fas fa-award"></i>
+                    <h4>Excellence</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUITS ===== -->
+    <section id="produits">
+        <div class="container">
+            <h2 class="section-title">Nos produits</h2>
+            <p class="section-subtitle">Des œufs de caille frais, sélectionnés avec soin pour vous offrir le meilleur</p>
+            <div class="produits-grid">
+                <div class="produit-card">
+                    <div class="produit-image">
+                        <img src="https://images.pexels.com/photos/162928/pexels-photo-162928.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Œufs frais" />
+                        <span class="star">⭐ Nouveauté</span>
+                    </div>
+                    <div class="produit-body">
+                        <span class="badge-produit">Frais</span>
+                        <h3>Œufs de caille bio</h3>
+                        <p>Pondus dans la journée, emballés avec soin pour préserver leur fraîcheur.</p>
+                        <ul>
+                            <li><i class="fas fa-circle"></i> Riches en vitamines A, B12, D et E</li>
+                            <li><i class="fas fa-circle"></i> Source de fer et de sélénium</li>
+                            <li><i class="fas fa-circle"></i> Idéal pour les enfants et sportifs</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-gold">Commander <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="produit-card">
+                    <div class="produit-image">
+                        <img src="https://images.pexels.com/photos/8051790/pexels-photo-8051790.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Œufs de caille en box" />
+                        <span class="star">⭐ Coup de cœur</span>
+                    </div>
+                    <div class="produit-body">
+                        <span class="badge-produit">Coffret</span>
+                        <h3>Box Découverte</h3>
+                        <p>Un assortiment de 50 œufs de caille, livrés dans un coffret élégant.</p>
+                        <ul>
+                            <li><i class="fas fa-circle"></i> Idéal pour les apéritifs et entrées</li>
+                            <li><i class="fas fa-circle"></i> Parfait pour découvrir notre production</li>
+                            <li><i class="fas fa-circle"></i> Livraison offerte en France</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-gold">Commander <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="produit-card">
+                    <div class="produit-image">
+                        <img src="https://images.pexels.com/photos/5058778/pexels-photo-5058778.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Abonnement œufs de caille" />
+                        <span class="star">⭐ Abonnement</span>
+                    </div>
+                    <div class="produit-body">
+                        <span class="badge-produit">Abonnement</span>
+                        <h3>Abonnement mensuel</h3>
+                        <p>Recevez chaque mois une boîte de 100 œufs de caille frais, livrés directement chez vous.</p>
+                        <ul>
+                            <li><i class="fas fa-circle"></i> Jusqu'à 15% de réduction</li>
+                            <li><i class="fas fa-circle"></i> Flexibilité de gestion</li>
+                            <li><i class="fas fa-circle"></i> Engagement sans durée</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-gold">S'abonner <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POURQUOI LA CAILLE ===== -->
+    <section id="pourquoi">
+        <div class="container">
+            <div class="pourquoi-grid">
+                <div class="pourquoi-content">
+                    <span class="badge">Nutrition</span>
+                    <h2>Pourquoi choisir l'œuf de caille ?</h2>
+                    <p class="slogan">"Un petit œuf aux grands bienfaits"</p>
+                    <p>L'œuf de caille est un véritable concentré de nutriments essentiels. Plus petit que l'œuf de poule, il est pourtant bien plus riche en vitamines et minéraux.</p>
+                    <p>Idéal pour les enfants, les sportifs, les seniors ou toute personne soucieuse de sa santé, il se démarque par sa teneur exceptionnelle en vitamines B12, D, A et en fer.</p>
+                    <div class="nutriments">
+                        <div class="nutriment"><i class="fas fa-bolt"></i> <span>Vitamine B12</span></div>
+                        <div class="nutriment"><i class="fas fa-sun"></i> <span>Vitamine D</span></div>
+                        <div class="nutriment"><i class="fas fa-eye"></i> <span>Vitamine A</span></div>
+                        <div class="nutriment"><i class="fas fa-droplet"></i> <span>Fer & Sélénium</span></div>
+                    </div>
+                </div>
+                <div class="pourquoi-image">
+                    <img src="https://images.pexels.com/photos/162128/pexels-photo-162128.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Œufs de caille" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POURQUOI CHOISIR ===== -->
+    <section id="choisir">
+        <div class="container">
+            <h2 class="section-title">Pourquoi nous choisir</h2>
+            <p class="section-subtitle">Des engagements qui font la différence</p>
+            <div class="choisir-grid">
+                <div class="choisir-item">
+                    <i class="fas fa-tractor"></i>
+                    <h4>Élevage en plein air</h4>
+                </div>
+                <div class="choisir-item">
+                    <i class="fas fa-seedling"></i>
+                    <h4>Alimentation 100% végétale</h4>
+                </div>
+                <div class="choisir-item">
+                    <i class="fas fa-tint"></i>
+                    <h4>Sans antibiotiques ni OGM</h4>
+                </div>
+                <div class="choisir-item">
+                    <i class="fas fa-box"></i>
+                    <h4>Livraison en 24h</h4>
+                </div>
+                <div class="choisir-item">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Relation directe producteur</h4>
+                </div>
+                <div class="choisir-item">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Emballage éco-responsable</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESSUS ===== -->
+    <section id="processus">
+        <div class="container">
+            <h2 class="section-title">Notre processus</h2>
+            <p class="section-subtitle">De l'élevage à votre table, chaque étape est maîtrisée</p>
+            <div class="processus-steps">
+                <div class="processus-step">
+                    <div class="step-num">1</div>
+                    <h4>Élevage en liberté</h4>
+                </div>
+                <div class="processus-step">
+                    <div class="step-num">2</div>
+                    <h4>Alimentation naturelle</h4>
+                </div>
+                <div class="processus-step">
+                    <div class="step-num">3</div>
+                    <h4>Ramassage quotidien</h4>
+                </div>
+                <div class="processus-step">
+                    <div class="step-num">4</div>
+                    <h4>Tri & sélection</h4>
+                </div>
+                <div class="processus-step">
+                    <div class="step-num">5</div>
+                    <h4>Conditionnement soigné</h4>
+                </div>
+                <div class="processus-step">
+                    <div class="step-num">6</div>
+                    <h4>Livraison express</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALERIE ===== -->
+    <section id="galerie">
+        <div class="container">
+            <h2 class="section-title">Galerie</h2>
+            <p class="section-subtitle">Découvrez notre univers en images</p>
+            <div class="galerie-grid" id="galerieGrid">
+                <div class="galerie-item">
+                    <img src="https://images.pexels.com/photos/1522537/pexels-photo-1522537.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Œufs de caille" />
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="galerie-item">
+                    <img src="https://images.pexels.com/photos/796608/pexels-photo-796608.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Caille" />
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="galerie-item">
+                    <img src="https://images.pexels.com/photos/162928/pexels-photo-162928.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Œufs frais" />
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="galerie-item">
+                    <img src="https://images.pexels.com/photos/162128/pexels-photo-162128.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ferme" />
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="galerie-item">
+                    <img src="https://images.pexels.com/photos/8051790/pexels-photo-8051790.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Box d'œufs" />
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="galerie-item">
+                    <img src="https://images.pexels.com/photos/5058778/pexels-photo-5058778.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Caille" />
+                    <div class="galerie-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+        <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="Agrandissement" id="lightboxImg" />
+        </div>
+    </div>
+
+    <!-- ===== TÉMOIGNAGES ===== -->
+    <section id="temoignages">
+        <div class="container">
+            <h2 class="section-title">Ils nous font confiance</h2>
+            <p class="section-subtitle">Les avis de nos clients</p>
+            <div class="temoignages-grid">
+                <div class="temoignage-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <blockquote>"Les meilleurs œufs de caille que j'ai jamais goûtés ! La fraîcheur est incomparable, on sent vraiment la qualité."</blockquote>
+                    <p class="author">— Marie D., Lyon</p>
+                </div>
+                <div class="temoignage-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <blockquote>"Un produit d'exception. Je suis cuisinier et je n'utilise que les œufs de La Caillerie pour mes recettes gastronomiques."</blockquote>
+                    <p class="author">— Jean-Pierre R., Paris</p>
+                </div>
+                <div class="temoignage-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <blockquote>"Mes enfants adorent les œufs de caille depuis que nous avons découvert La Caillerie. Un vrai régal !"</blockquote>
+                    <p class="author">— Sophie M., Marseille</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BLOG ===== -->
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title">Le blog</h2>
+            <p class="section-subtitle">Articles et conseils autour de l'œuf de caille</p>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.pexels.com/photos/1522537/pexels-photo-1522537.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Œuf de caille" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="tag">Recette</span>
+                        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> 12 juin 2024</span> <span><i class="far fa-clock"></i> 5 min de lecture</span></div>
+                        <h4>5 recettes originales avec des œufs de caille</h4>
+                        <p>Découvrez comment sublimer vos plats avec ces petits trésors nutritionnels.</p>
+                        <a href="#" class="btn-lire">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.pexels.com/photos/162128/pexels-photo-162128.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Nutrition" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="tag">Nutrition</span>
+                        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> 5 mai 2024</span> <span><i class="far fa-clock"></i> 4 min de lecture</span></div>
+                        <h4>Les bienfaits insoupçonnés des œufs de caille</h4>
+                        <p>Pourquoi ces petits œufs sont-ils des alliés santé incomparables ?</p>
+                        <a href="#" class="btn-lire">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.pexels.com/photos/796608/pexels-photo-796608.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Élevage" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="tag">Élevage</span>
+                        <div class="blog-meta"><span><i class="far fa-calendar-alt"></i> 18 avril 2024</span> <span><i class="far fa-clock"></i> 6 min de lecture</span></div>
+                        <h4>Les secrets d'un élevage de cailles réussi</h4>
+                        <p>Plongez dans les coulisses de notre ferme et découvrez notre savoir-faire.</p>
+                        <a href="#" class="btn-lire">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq">
+        <div class="container">
+            <h2 class="section-title">Questions fréquentes</h2>
+            <p class="section-subtitle">Tout ce que vous devez savoir sur nos produits</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Comment conserver les œufs de caille ? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Les œufs de caille se conservent idéalement au réfrigérateur, entre 4°C et 8°C, pendant 3 à 4 semaines. Nous vous conseillons de les placer dans la partie la plus froide du réfrigérateur.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Quelle est la différence entre un œuf de caille et un œuf de poule ? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">L'œuf de caille est plus petit mais plus riche en nutriments. Il contient davantage de vitamines B12, D, A, de fer et de sélénium. Son goût est également plus fin et plus délicat.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Livrez-vous partout en France ? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Oui, nous livrons dans toute la France métropolitaine. La livraison est offerte à partir de 50€ d'achat et nos colis sont spécialement conçus pour garantir la fraîcheur des œufs.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Vos cailles sont-elles élevées en plein air ? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Oui, nos cailles sont élevées en liberté dans des espaces verts et protégés. Elles ont accès à un parc extérieur toute l'année, ce qui garantit leur bien-être et la qualité de leurs œufs.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="badge">Contact</span>
+                    <h2>Parlons de vos envies</h2>
+                    <p>Vous souhaitez passer commande, en savoir plus sur nos produits ou organiser une visite de la ferme ? N'hésitez pas à nous contacter.</p>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <div class="label">Téléphone</div>
+                            <a href="tel:+33123456789" class="value">01 23 45 67 89</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <div class="label">Email</div>
+                            <a href="mailto:contact@lacaillerie.fr" class="value">contact@lacaillerie.fr</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <div class="label">Adresse</div>
+                            <span class="value">5 Rue de la Ferme, 75000 Paris</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <div class="label">Horaires</div>
+                            <span class="value">Lun-Ven : 9h-18h | Sam : 10h-16h</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envoyez-nous un message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" placeholder="Votre nom" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Votre email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Votre message..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold">Envoyer <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon"><i class="fas fa-egg"></i></span>
+                        La Caillerie
+                    </a>
+                    <p>Des œufs de caille d'exception, élevés dans le respect de la nature et du bien-être animal.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <a href="#histoire">Histoire</a>
+                    <a href="#produits">Produits</a>
+                    <a href="#pourquoi">Pourquoi la Caille</a>
+                    <a href="#contact">Commander</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Infos</h4>
+                    <a href="#">Livraison</a>
+                    <a href="#">Conditions générales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Mentions légales</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Suivez-nous</h4>
+                    <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 La Caillerie. Tous droits réservés.</span>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== HAMBURGER =====
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // ===== SCROLL HEADER =====
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isOpen = item.classList.contains('open');
+
+                document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+
+        // ===== LIGHTBOX =====
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeBtn = document.getElementById('lightboxClose');
+        const prevBtn = document.getElementById('lightboxPrev');
+        const nextBtn = document.getElementById('lightboxNext');
+
+        let galleryItems = [];
+        let currentIndex = 0;
+
+        const galerieItems = document.querySelectorAll('.galerie-item');
+        galerieItems.forEach((item, index) => {
+            const img = item.querySelector('img');
+            galleryItems.push(img.src);
+
+            item.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+
+        function openLightbox(index) {
+            currentIndex = index;
+            lightboxImg.src = galleryItems[currentIndex];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + galleryItems.length) % galleryItems.length;
+            lightboxImg.src = galleryItems[currentIndex];
+        }
+
+        prevBtn.addEventListener('click', () => navigateLightbox(-1));
+        nextBtn.addEventListener('click', () => navigateLightbox(1));
+
+        // ===== ACTIVE NAV LINK =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinksAll = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinksAll.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
